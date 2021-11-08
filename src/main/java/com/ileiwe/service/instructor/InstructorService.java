@@ -2,6 +2,7 @@ package com.ileiwe.service.instructor;
 
 import com.ileiwe.data.dto.InstructorPartyDto;
 import com.ileiwe.data.model.Instructor;
+import com.ileiwe.service.exception.UserAlreadyExistsException;
 
 /**
  * @author oluwatobi
@@ -10,6 +11,6 @@ import com.ileiwe.data.model.Instructor;
  * inside the package - com.ileiwe.service.instructor
  */
 public interface InstructorService {
-    Instructor save(InstructorPartyDto dto);
+    Instructor save(InstructorPartyDto dto) throws UserAlreadyExistsException;
 
 }

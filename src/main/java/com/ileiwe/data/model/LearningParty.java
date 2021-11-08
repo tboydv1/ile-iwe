@@ -1,5 +1,6 @@
 package com.ileiwe.data.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -33,11 +34,15 @@ public class LearningParty {
     @NotBlank @NotNull
     private String email;
     @Column(nullable = false)
+    @JsonIgnore
     @NotBlank @NotNull
     private String password;
+    @JsonIgnore
     private boolean enabled;
     @CreationTimestamp
     private LocalDateTime dateCreated;
+    @JsonIgnore
+    private String token;
 
     @OneToMany(cascade = CascadeType.PERSIST)
     private List<Authority> authorities;
