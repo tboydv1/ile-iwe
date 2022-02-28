@@ -23,7 +23,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class WebSecurityConfig
         extends WebSecurityConfigurerAdapter {
 
-    private final LearningPartyServiceImpl userDetails;
+    private final LearningPartyServiceImpl usrDetails;
 
     @Autowired
     public WebSecurityConfig(LearningPartyServiceImpl learningPartyService){
@@ -34,7 +34,7 @@ public class WebSecurityConfig
     protected void configure(HttpSecurity http) throws Exception {
             http
                 .csrf().disable()
-                .authorizeRequests()
+                .authorizeReques()
 //                .antMatchers(HttpMethod.POST, "/api/instructor").permitAll()
                 .anyRequest()
                 .authenticated()
